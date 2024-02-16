@@ -21,7 +21,7 @@ public class GetService {
 		
 		if(num <= 3) {
 			throw new CustomException(ErrorCode.TEST404_EXCEPTION);
-		}else if (num <= 10) {
+		}else if (num <= 8) {
 			throw new CustomException(ErrorCode.TEST500_EXCEPTION);
 		}
 		return num;
