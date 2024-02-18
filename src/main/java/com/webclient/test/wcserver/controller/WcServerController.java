@@ -7,7 +7,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -60,5 +59,15 @@ public class WcServerController {
 		}catch(CustomException e) {
 			return new ResponseEntity<>(StatusResponseDto.serverFail(e.getErrorCode().getHttpStatus().value(), e.getErrorCode().getDetail()), e.getErrorCode().getHttpStatus());
 		}
+	}
+	
+	@PostMapping("/2")
+	public ResponseEntity<StatusResponseDto> post3(@RequestBody Object bodyData){
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.ok().body(StatusResponseDto.success("5초 sleep"));
 	}
 }
