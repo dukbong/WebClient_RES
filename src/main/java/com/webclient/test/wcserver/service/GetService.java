@@ -19,11 +19,12 @@ public class GetService {
 		
 		int num = (int)(Math.random() * 10) + 1;
 		
-		if(num <= 3) {
+		if(num <= 5) {
 			throw new CustomException(ErrorCode.TEST404_EXCEPTION);
-		}else if (num <= 8) {
-			throw new CustomException(ErrorCode.TEST500_EXCEPTION);
 		}
+//		else if (num <= 8) {
+//			throw new CustomException(ErrorCode.TEST500_EXCEPTION);
+//		}
 		return num;
 	}
 }
