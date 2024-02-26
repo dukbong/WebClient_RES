@@ -11,6 +11,6 @@ public class TestAdvice2 {
 
 	@ExceptionHandler(value = CustomException.class)
 	public void test(CustomException e) {
-		log.info("CustomException Adivce");
+		log.info("==================> CustomException Adivce");
 	}
 }

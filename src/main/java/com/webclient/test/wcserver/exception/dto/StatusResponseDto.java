@@ -1,6 +1,6 @@
 package com.webclient.test.wcserver.exception.dto;
 
-import com.webclient.test.wcserver.exception.ErrorCode;
+import com.webclient.test.wcserver.exception.StatusCode;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,14 +12,14 @@ public class StatusResponseDto {
 	private String status;
 	private Object data;
 	
-    public StatusResponseDto(ErrorCode status) {
+    public StatusResponseDto(StatusCode status) {
         this.status = status.getStatusName();
     }
     
     public static StatusResponseDto success(Object data){
-        return new StatusResponseDto(ErrorCode.SUC.getStatusName(), data);
+        return new StatusResponseDto(StatusCode.SUC.getStatusName(), data);
     }
-    public static StatusResponseDto serverFail(ErrorCode status, Object data){
+    public static StatusResponseDto serverFail(StatusCode status, Object data){
         return new StatusResponseDto(status.getStatusName(), data);
     }
 }

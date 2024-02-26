@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import org.springframework.stereotype.Service;
 
 import com.webclient.test.wcserver.exception.CustomException;
-import com.webclient.test.wcserver.exception.ErrorCode;
+import com.webclient.test.wcserver.exception.StatusCode;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,10 +20,10 @@ public class GetService {
 		int num = (int)(Math.random() * 10) + 1;
 		
 		if(num <= 8) {
-			throw new CustomException(ErrorCode.EX1);
+			throw new CustomException(StatusCode.EX1);
 		}
 		else if (num <= 9) {
-			throw new CustomException(ErrorCode.EX2);
+			throw new CustomException(StatusCode.EX2);
 		}
 		return num;
 	}
