@@ -19,11 +19,17 @@ public class GetService {
 		
 		int num = (int)(Math.random() * 10) + 1;
 		
-		if(num <= 8) {
+		if(num <= 2) {
 			throw new CustomException(StatusCode.EX1);
 		}
-		else if (num <= 9) {
+		else if (num <= 4) {
 			throw new CustomException(StatusCode.EX2);
+		}
+		else if (num <= 6) {
+			throw new RuntimeException("의문의 Exception 발생1");
+		}
+		else if (num <= 8) {
+			throw new IllegalArgumentException("의문의 Exception 발생2");
 		}
 		return num;
 	}

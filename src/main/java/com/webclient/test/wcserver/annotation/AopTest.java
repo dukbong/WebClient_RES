@@ -120,9 +120,8 @@ public class AopTest {
         		return new ResponseEntity<>(StatusResponseDto.serverFail(errorCode, errorCode.getDetail()), HttpStatus.valueOf(errorCode.getHttpStatus()));
         	} else {
         		// 지정되어 있지 않은 오류 관련하여 반환
-//        		log.error("e.getMeesage() : {}", e.getMessage());
-//        		log.error("ErrorCode.UNKOWN.getDetail() : {}", ErrorCode.UNKNOWN.getDetail());
-        		return new ResponseEntity<>(StatusResponseDto.serverFail(StatusCode.UNKNOWN, StatusCode.UNKNOWN.getDetail()), HttpStatus.BANDWIDTH_LIMIT_EXCEEDED);
+        		log.error("e.getMeesage() : {}", e.getMessage());
+        		return new ResponseEntity<>(StatusResponseDto.serverFail(StatusCode.UNKNOWN, StatusCode.UNKNOWN.getDetail()), HttpStatus.INTERNAL_SERVER_ERROR);
         	}
         }
     }
