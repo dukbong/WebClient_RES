@@ -47,6 +47,7 @@ public class AopTest {
         	//=========== 처리를 위한 값
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
             Cookie[] cookies = request.getCookies();
+            log.info("cookie size = {}", cookies.length);
 //            if(cookies == null) throw new Exception("Cookie가 비어있습니다.");
             if(cookies == null) throw new CustomException(StatusCode.COOKIE_EMPTY);
             // Cookie 값
@@ -73,6 +74,7 @@ public class AopTest {
                     	countExists = true;
                         break;
                 }
+                log.info("{} : {}", cookie.getName(), cookie.getValue());
             }
             if (!userSnExists || !urlExists || !fromExists || !toExists || !countExists) {
 //                throw new Exception("필수 쿠키 값이 누락되었습니다.");
